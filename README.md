@@ -15,7 +15,7 @@ nvm use lts
 git clone https://github.com/myouimyoui/document-request-page.git
 cd document-request-page
 npm install
-npm run dev
+npm run dev -- --open
 ```
 
 ### AI Tools:
