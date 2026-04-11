@@ -38,10 +38,9 @@ Create a Svelte.js mobile UI high-fidelity prototype for an University Portal Do
 ## Alumni Screens
 ![Login Alumni](assets/images/login-alumni.png)
 ![Alumni Dashboard](assets/images/alumni-dashboard.png)
-![Alumni Request a Document](assets/images/alumni-request-a-document.png)
+![Alumni Request Document](assets/images/alumni-request-document.png)
 ![Alumni Review Request](assets/images/alumni-review-request.png)
 ![Alumni Tracker](assets/images/alumni-tracker.png)
-![Alumni Dashboard](assets/images/alumni-dashboard.png)
 ![Alumni Profile](assets/images/alumni-profile.png)
 
 ## Staff Screens
@@ -52,4 +51,3 @@ Create a Svelte.js mobile UI high-fidelity prototype for an University Portal Do
 ![Manage Request Approved](assets/images/manage-request-approved.png)
 ![Manage Request Ready](assets/images/manage-request-ready.png)
 ![Staff Profile](assets/images/staff-profile.png)
-
