@@ -1,4 +1,4 @@
-## Tangcay
+## Tangcay, Aaron Ace P.
 
 #### Framework: Svelte JS
 
@@ -12,7 +12,7 @@ To replicate and run this project follow the following steps using Windows Power
 winget install OpenJS.NodeJS.LTS
 nvm install lts
 nvm use lts
-git clone git@github.com:myouimyoui/document-request-page.git
+git clone https://github.com/myouimyoui/document-request-page.git
 cd document-request-page
 npm install
 npm run dev
