@@ -10,7 +10,7 @@ Prerequisites
 Make sure the following are installed on your machine:
 
 - [Node 18.13.0 or higher](https://nodejs.org/en) — required to run Svelte
-- [Git](https://nodejs.org/en) — required to clone the repository
+- [Git](https://git-scm.com/) — required to clone the repository
 
 To replicate and run this project follow the following steps using Windows Powershell:
 
