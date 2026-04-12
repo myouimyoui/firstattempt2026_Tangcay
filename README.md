@@ -44,7 +44,7 @@ Create a Svelte.js mobile UI high-fidelity prototype for an University Portal Do
 ### Alumni Tracker
 ![Alumni Tracker](assets/images/alumni-tracker.png)
 ### Alumni History
-![Alumni History](alumni-history.png)
+![Alumni History](assets/images/alumni-history.png)
 ### Alumni Profile
 ![Alumni Profile](assets/images/alumni-profile.png)
 
