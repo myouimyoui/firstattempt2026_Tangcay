@@ -19,8 +19,8 @@ To replicate and run this project, follow these steps:
 winget install OpenJS.NodeJS.LTS
 
 ## (Optional) Install and use Node Version Manager
-nvm install lts
-nvm use lts
+-nvm install lts
+-nvm use lts
 
 ## Clone the repository
 git clone https://github.com/myouimyoui/document-request-page.git
