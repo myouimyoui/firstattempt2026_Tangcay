@@ -15,23 +15,23 @@ Make sure the following are installed on your machine:
 Setup (Windows PowerShell)
 To replicate and run this project, follow these steps:
 
-# Install Node.js (LTS)
+## Install Node.js (LTS)
 winget install OpenJS.NodeJS.LTS
 
-# (Optional) Install and use Node Version Manager
+## (Optional) Install and use Node Version Manager
 nvm install lts
 nvm use lts
 
-# Clone the repository
+## Clone the repository
 git clone https://github.com/myouimyoui/document-request-page.git
 
-# Navigate into the project directory
+## Navigate into the project directory
 cd document-request-page
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# Start the development server
+## Start the development server
 npm run dev -- --open
 
 ### AI Tools:
