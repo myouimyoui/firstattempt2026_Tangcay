@@ -4,7 +4,7 @@
 
 #### Module: Document Request
 
-#### Installation
+#### 🚀 Installation
 
 Prerequisites
 Make sure the following are installed on your machine:
@@ -12,17 +12,27 @@ Make sure the following are installed on your machine:
 - [Node 18.13.0 or higher](https://nodejs.org/en) — required to run Svelte
 - [Git](https://git-scm.com/) — required to clone the repository
 
-To replicate and run this project follow the following steps using Windows Powershell:
+Setup (Windows PowerShell)
+To replicate and run this project, follow these steps:
 
-```bash
+# Install Node.js (LTS)
 winget install OpenJS.NodeJS.LTS
+
+# (Optional) Install and use Node Version Manager
 nvm install lts
 nvm use lts
+
+# Clone the repository
 git clone https://github.com/myouimyoui/document-request-page.git
+
+# Navigate into the project directory
 cd document-request-page
+
+# Install dependencies
 npm install
+
+# Start the development server
 npm run dev -- --open
-```
 
 ### AI Tools:
 
