@@ -59,6 +59,8 @@ File attachments:images AdDU logo
 ![Alumni Profile](assets/images/alumni-profile.png)
 
 ## Staff Screens
+### Login Screen
+![Login Page](assets/images/login-staff.png)
 ### Staff Dashboard
 ![Staff Dashboard](assets/images/staff-dashboard.png)
 ### Manage Request
