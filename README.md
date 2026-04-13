@@ -39,7 +39,7 @@ File Attachments: unversity portal document request system pdf file
 Gemini prompt:
 Create a Svelte.js website UI high-fidelity prototype for an University Portal Document Request system that follows this flow: Alumni Login Page where an alumnus logs in using their university account to track appointments and requests, supporting organized scheduling and reduced waiting time; Alumni Dashboard displaying all pending, approved, and ready document requests with tracking capability; Alumni Profile showing account information; Document Request Selection Page displaying available document requests; Appointment Selection Page showing all requestable documents with their prices for complete information; Request Review Page summarizing the request including document, date, time, and price for confirmation; Order Tracker allowing real-time tracking of request status (processed, approved, ready for release); Transaction History displaying payment records with accurate dates, amounts, full details, and access to digital and printable receipts; Staff Login Page allowing staff to log in using university email to track requests; Staff Dashboard showing all pending, approved, and ready requests upon login; Staff Profile allowing viewing and updating of account information; and Status Filter Page enabling staff to filter document requests by status for easier approval and organized workflow. Use Tailwind CSS Styling, Use color #1E3A8A and #FFFFFF for the font use EB Garamond 
 
-File attachments:images AdDU logo
+File attachments: image AdDU logo
 
 #### Screenshots
 
