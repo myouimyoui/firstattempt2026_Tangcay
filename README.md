@@ -35,49 +35,75 @@ npm install
 ## Start the development server
 npm run dev -- --open
 
+### Branch
+```bash
+git checkout -b feature/pwa-ready
+```
+
+### Files Added / Modified
+
+| File | Purpose |
+|------|---------|
+| `static/manifest.json` | Web App Manifest with ADDU branding, icons, screenshots |
+| `static/service-worker.js` | Custom Service Worker — Cache First for shell/images, Network First for API routes |
+| `static/offline.html` | Offline fallback page shown when no cache & no network |
+| `src/routes/+layout.svelte` | Root layout — manifest link, PWA meta tags, SW registration |
+
 ### AI Tools:
 
-1. Chat GPT - used to create the prompt for the webpage
-2. Gemini (Pro) - Webpage creation and refining the css
+1. Gemini (Pro) - PWA prompt creation
+2. Claude - Creating PWA website
 
 ### Prompt:
 
-GPT prompt:
-Create a prompt that is using Svelte.js to create a website. follow the flow and don't add anything or unnecessary things other what's inside the file attachments
+Gemini Prompt:
+Help me Create a PWA prompt for my current svelte.js project
 
-File Attachments: unversity portal document request system pdf file
+Claude (Anthropic) Prompt:
+Best if you are starting from scratch and want a robust, standards-compliant PWA structure. "I am building a Progressive Web App using SvelteKit and Vite. Act as an expert frontend engineer. Help me configure vite-plugin-pwa for an offline-first experience. I need a manifest configuration that includes maskable icons, a theme color of [Insert Color], and a service worker strategy for 'Cache First' assets. Please provide the vite.config.js setup and a Svelte component that handles the beforeinstallprompt event with a custom UI." 
 
-Gemini prompt:
-Create a Svelte.js website UI high-fidelity prototype for an University Portal Document Request system that follows this flow: Alumni Login Page where an alumnus logs in using their university account to track appointments and requests, supporting organized scheduling and reduced waiting time; Alumni Dashboard displaying all pending, approved, and ready document requests with tracking capability; Alumni Profile showing account information; Document Request Selection Page displaying available document requests; Appointment Selection Page showing all requestable documents with their prices for complete information; Request Review Page summarizing the request including document, date, time, and price for confirmation; Order Tracker allowing real-time tracking of request status (processed, approved, ready for release); Transaction History displaying payment records with accurate dates, amounts, full details, and access to digital and printable receipts; Staff Login Page allowing staff to log in using university email to track requests; Staff Dashboard showing all pending, approved, and ready requests upon login; Staff Profile allowing viewing and updating of account information; and Status Filter Page enabling staff to filter document requests by status for easier approval and organized workflow. Use Tailwind CSS Styling, Use color #1E3A8A and #FFFFFF for the font use EB Garamond 
+## AI Hallucinations / Errors Fixed Manually
 
-File attachments: image AdDU logo
+| # | Hallucination / Error | Manual Fix Applied |
+|---|----------------------|-------------------|
+| 1 | AI used import { count } from './store' and tried to update it with count++ | Replaced with $state rune or used the count.update(n => n + 1) syntax for writable stores to ensure reactivity. |
+| 2 | AI tried to access document or window at the top level of a script tag | Wrapped the logic in onMount or used the browser check from $app/environment to prevent SSR crashes. |
+| 3 | AI suggested putting a Service Worker in static/ and manually registering it |Moved service-worker.js to src/ and let SvelteKit handle the registration and hashed asset manifest automatically. |
+| 4 | AI suggested export let data for a child component | Changed to let { ...props } = $props() (Svelte 5) to follow the new component communication pattern. |
+| 5 | AI used target: '#root' in a config file, but SvelteKit uses %sveltekit.body% in app.html | Restored the template tags in app.html to allow the engine to inject the app correctly. |
+| 6 | AI tried to fetch API data using a relative path /api/user inside onMount | Moved the fetch to a +page.server.js load function to benefit from server-side execution and avoid CORS/relative path issues. |
+| 7 | AI used adapter-auto for a project requiring a Node.js VPS | Explicitly swapped to @sveltejs/adapter-node in svelte.config.js to ensure the build generates a runnable index.js server. |
+| 8 | AI suggested position: absolute for the Sidebar, causing it to scroll away | Applied position: fixed with height: 100vh and used a grid-template-columns on the parent to prevent content overlap |
+| 9 | AI used bind:value on a prop directly, which is now deprecated/warned | Switched to the bindable() rune to explicitly allow two-way binding for that specific property. |
+| 10 | AI hardcoded VITE_API_URL in the frontend code | Moved sensitive keys to .env and imported via $env/static/public to ensure they are properly injected during the Vite build process. |
+
 
 #### Screenshots
 
 ## Alumni Screens
 ### Login Screen
-![Login Page](assets/images/login-page.png)
+![Login Page](assets/images/Login-screen-pwa.png)
 ### Alumni Dashboard
-![Alumni Dashboard](assets/images/alumni-dashboard.png)
+![Alumni Dashboard](assets/images/dashboard.png)
 ### Alumni Request Document
-![Alumni Request Document](assets/images/alumni-request-document.png)
-![Alumni Review Request](assets/images/alumni-review-request.png)
+![Alumni Request Document](assets/images/request.png)
+![Alumni Review Request](assets/images/review.png)
 ### Alumni Tracker
-![Alumni Tracker](assets/images/alumni-tracker.png)
+![Alumni Tracker](assets/images/tracker.png)
 ### Alumni History
-![Alumni History](assets/images/alumni-history.png)
+![Alumni History](assets/images/history.png)
 ### Alumni Profile
-![Alumni Profile](assets/images/alumni-profile.png)
+![Alumni Profile](assets/images/profile.png)
 
 ## Staff Screens
 ### Login Screen
-![Login Page](assets/images/login-staff.png)
+![Login Page](assets/images/staff-login.png)
 ### Staff Dashboard
 ![Staff Dashboard](assets/images/staff-dashboard.png)
 ### Manage Request
-![Manage Request](assets/images/manage-request.png)
-![Manage Request Pending](assets/images/manage-request-pending.png)
-![Manage Request Approved](assets/images/manage-request-approved.png)
-![Manage Request Ready](assets/images/manage-request-ready.png)
+![Manage Request](assets/images/staff-all.png)
+![Manage Request Pending](assets/images/staff-pending.png)
+![Manage Request Approved](assets/images/staff-approved.png)
+![Manage Request Ready](assets/images/staff-ready.png)
 ### Staff Profile
 ![Staff Profile](assets/images/staff-profile.png)
